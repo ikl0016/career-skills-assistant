@@ -1,0 +1,12 @@
+[
+  {"course_id": "C01", "title": "SQL for Analysts", "description": "Write queries to filter, join and aggregate business data.", "skills_taught": ["SQL"], "level": "Beginner", "duration_hours": 6},
+  {"course_id": "C02", "title": "Python for Data", "description": "Use Python and pandas to clean and analyze datasets.", "skills_taught": ["Python", "Statistics"], "level": "Beginner", "duration_hours": 10},
+  {"course_id": "C03", "title": "Intro to Machine Learning", "description": "Build and evaluate regression and classification models in Python.", "skills_taught": ["Machine Learning", "Statistics"], "level": "Intermediate", "duration_hours": 12},
+  {"course_id": "C04", "title": "Cloud Foundations on AWS", "description": "Learn core cloud services, networking and identity on AWS.", "skills_taught": ["Cloud Fundamentals", "Networking"], "level": "Beginner", "duration_hours": 8},
+  {"course_id": "C05", "title": "Docker and Kubernetes Essentials", "description": "Containerize apps and run them on a Kubernetes cluster.", "skills_taught": ["Docker", "Kubernetes"], "level": "Intermediate", "duration_hours": 10},
+  {"course_id": "C06", "title": "CI/CD Pipelines in Practice", "description": "Automate testing and deployment with build pipelines.", "skills_taught": ["CI/CD", "Docker"], "level": "Intermediate", "duration_hours": 6},
+  {"course_id": "C07", "title": "Designing REST APIs", "description": "Design clean, versioned APIs and the services behind them.", "skills_taught": ["REST API Design", "System Design"], "level": "Intermediate", "duration_hours": 5},
+  {"course_id": "C08", "title": "Security Fundamentals for Engineers", "description": "Secure Linux systems and apply access-control basics.", "skills_taught": ["Security Fundamentals", "Linux"], "level": "Beginner", "duration_hours": 6},
+  {"course_id": "C09", "title": "Leading Technical Teams", "description": "Run projects, give feedback and lead engineers.", "skills_taught": ["Leadership", "Communication"], "level": "Intermediate", "duration_hours": 4},
+  {"course_id": "C10", "title": "Storytelling with Data", "description": "Present data findings with clear charts and narrative.", "skills_taught": ["Data Visualization", "Communication"], "level": "Beginner", "duration_hours": 3}
+]

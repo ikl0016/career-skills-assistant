@@ -1,0 +1,11 @@
+[
+  {"employee_id": "E001", "name": "Maya Chen", "current_role": "Data Analyst",
+   "skills": ["SQL", "Excel", "Data Visualization", "Python"],
+   "completed_courses": ["C01"], "career_interest": "Move into machine learning engineering"},
+  {"employee_id": "E002", "name": "Jordan Ellis", "current_role": "IT Support Specialist",
+   "skills": ["Linux", "Networking", "Security Fundamentals"],
+   "completed_courses": ["C08"], "career_interest": "Move into cloud engineering"},
+  {"employee_id": "E003", "name": "Priya Raman", "current_role": "Junior Backend Developer",
+   "skills": ["Python", "REST API Design", "Docker"],
+   "completed_courses": ["C07"], "career_interest": "Become a solutions architect"}
+]

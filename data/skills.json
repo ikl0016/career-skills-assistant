@@ -1,0 +1,20 @@
+[
+  {"skill_id": "S01", "name": "Python", "category": "Programming", "description": "General-purpose programming for data and backend work.", "roles": ["Machine Learning Engineer", "Analytics Engineer", "Senior Backend Developer", "Data Analyst"]},
+  {"skill_id": "S02", "name": "SQL", "category": "Data", "description": "Querying and shaping data in relational databases.", "roles": ["Analytics Engineer", "Data Analyst"]},
+  {"skill_id": "S03", "name": "Excel", "category": "Data", "description": "Spreadsheet analysis, formulas and pivot tables.", "roles": ["Data Analyst"]},
+  {"skill_id": "S04", "name": "Statistics", "category": "Data & AI", "description": "Probability, distributions and hypothesis testing.", "roles": ["Machine Learning Engineer"]},
+  {"skill_id": "S05", "name": "Machine Learning", "category": "Data & AI", "description": "Training and evaluating predictive models.", "roles": ["Machine Learning Engineer"]},
+  {"skill_id": "S06", "name": "Data Visualization", "category": "Data", "description": "Turning data into clear charts and dashboards.", "roles": ["Analytics Engineer", "Data Analyst"]},
+  {"skill_id": "S07", "name": "Cloud Fundamentals", "category": "Cloud", "description": "Core cloud services for compute, storage and identity.", "roles": ["Cloud Engineer"]},
+  {"skill_id": "S08", "name": "Linux", "category": "Infrastructure", "description": "Administering Linux systems from the command line.", "roles": ["Cloud Engineer", "IT Support Specialist"]},
+  {"skill_id": "S09", "name": "Networking", "category": "Infrastructure", "description": "IP addressing, DNS, routing and firewalls.", "roles": ["Cloud Engineer", "IT Support Specialist"]},
+  {"skill_id": "S10", "name": "Docker", "category": "DevOps", "description": "Packaging applications into containers.", "roles": ["Machine Learning Engineer", "Cloud Engineer", "Senior Backend Developer"]},
+  {"skill_id": "S11", "name": "Kubernetes", "category": "DevOps", "description": "Running and scaling containers in production.", "roles": ["Cloud Engineer"]},
+  {"skill_id": "S12", "name": "CI/CD", "category": "DevOps", "description": "Automating build, test and deployment pipelines.", "roles": ["Cloud Engineer", "Senior Backend Developer", "Analytics Engineer"]},
+  {"skill_id": "S13", "name": "REST API Design", "category": "Software Engineering", "description": "Designing clear, versioned HTTP APIs.", "roles": ["Senior Backend Developer", "Junior Backend Developer"]},
+  {"skill_id": "S14", "name": "System Design", "category": "Software Engineering", "description": "Designing scalable, reliable services.", "roles": ["Senior Backend Developer"]},
+  {"skill_id": "S15", "name": "Security Fundamentals", "category": "Security", "description": "Access control, threats and secure configuration.", "roles": ["Cloud Engineer", "IT Support Specialist"]},
+  {"skill_id": "S16", "name": "Communication", "category": "Professional", "description": "Explaining ideas clearly to different audiences.", "roles": ["Regional Sales Manager"]},
+  {"skill_id": "S17", "name": "Leadership", "category": "Professional", "description": "Guiding and developing a team.", "roles": ["Regional Sales Manager"]},
+  {"skill_id": "S18", "name": "Project Management", "category": "Professional", "description": "Planning scope, timelines and stakeholders.", "roles": ["Regional Sales Manager"]}
+]
