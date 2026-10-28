@@ -1,0 +1,1 @@
+- Oct 28: Empty Enter sent a blank question to the model (wasted ~900 tokens). Fix: skip empty input in cli.py.
