@@ -47,6 +47,17 @@ class ToolBox:
         self.retrieved_ids.update(h["job_id"] for h in hits)
         return hits
 
+    def set_consent(self, said_yes):
+        """Called by app code with the human's latest reply. Anything other
+        than a yes cancels a pending enrollment, so consent always has to be
+        the very next reply."""
+        if self.pending_course is None:
+            self.user_confirmed = False
+        elif said_yes:
+            self.user_confirmed = True
+        else:
+            self.pending_course, self.user_confirmed = None, False
+
     def enroll_in_course(self, course_id):
         catalog = {c["course_id"]: c for c in load("courses.json")}
         if course_id not in catalog:

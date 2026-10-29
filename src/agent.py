@@ -1,6 +1,6 @@
 import json, os, re, time
 from dotenv import load_dotenv
-from openai import OpenAI, BadRequestError
+from openai import OpenAI, BadRequestError, RateLimitError
 from pydantic import ValidationError
 from tools import ToolBox, TOOL_SCHEMAS
 from prompts import SYSTEM_PROMPT
@@ -26,15 +26,21 @@ class Session:
 
     def _call_model(self, tool_choice="auto"):
         """tool_choice="none" forces a text answer: the model cannot call tools."""
-        t0 = time.perf_counter()
-        for attempt in range(2):          # retry once on a malformed tool call
+        t0, bad_requests = time.perf_counter(), 0
+        for attempt in range(6):
             try:
                 resp = client.chat.completions.create(
                     model=MODEL, messages=self.messages, tools=TOOL_SCHEMAS,
                     tool_choice=tool_choice, temperature=0)
                 break
-            except BadRequestError:
-                if attempt == 1:
+            except RateLimitError as e:             # free tier: wait, then retry
+                if attempt == 5:
+                    raise
+                wait = e.response.headers.get("retry-after")
+                time.sleep(min(float(wait) if wait else 10, 60))
+            except BadRequestError:                 # malformed tool call: retry once
+                bad_requests += 1
+                if bad_requests == 2:
                     raise
         self.log.append({"ms": round((time.perf_counter() - t0) * 1000),
                          "tokens": resp.usage.total_tokens if resp.usage else None})
@@ -42,7 +48,7 @@ class Session:
 
     def ask(self, user_text, max_steps=10):
         # Consent is decided by CODE from the human's words, never by the model.
-        self.tools.user_confirmed = is_yes(user_text) and self.tools.pending_course is not None
+        self.tools.set_consent(is_yes(user_text))
         self.trace = []
         self.messages.append({"role": "user", "content": user_text})
 
