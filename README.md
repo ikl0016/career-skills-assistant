@@ -11,12 +11,12 @@ Each pick comes with a one-sentence reason tied to that employee. The assistant 
 ## How it works
 
 ```
-You (cli.py) → Agent loop (agent.py) → AI model → Tools (tools.py) → Search (retrieval.py) → data/*.json
-                       ↑                                                                      │
-                       └──────────── results go back to the model until it can answer ────────┘
+You (app.py / cli.py) → Agent loop (agent.py) → AI model → Tools (tools.py) → Search (retrieval.py) → data/*.json
+                                ↑                                                                      │
+                                └──────────── results go back to the model until it can answer ────────┘
 ```
 
-1. The employee types a question in the terminal.
+1. The employee asks a question in the browser or the terminal.
 2. The agent loop sends it to the AI model along with the five tools it may use: `get_my_profile`, `search_skills`, `search_courses`, `search_jobs` and `enroll_in_course`.
 3. The model picks a tool, the code runs it, and the result goes back to the model. This repeats (up to 10 steps) until the model has what it needs.
 4. The final answer is checked before the employee sees it.
@@ -37,7 +37,17 @@ python src/test_llm.py           # quick check that the API key and model work
 
 ## Run it
 
-Run from the project root so the `data/` folder is found:
+Run from the project root so the `data/` folder is found.
+
+**Web demo** (opens in your browser):
+
+```bash
+streamlit run src/app.py
+```
+
+Pick an employee in the sidebar (this stands in for sign-in), then chat or click one of the example questions. Recommendations show up as cards, and "Show behind the scenes" shows which tools the AI called, whether its JSON was valid, and the time and tokens used.
+
+**Terminal version:**
 
 ```bash
 python src/cli.py --employee E001
@@ -57,7 +67,7 @@ Try asking:
 - `Enroll me in Intro to Machine Learning`, then `yes` (or `no`)
 - `What skills does Jordan have?` (it should decline)
 
-After each answer, the CLI shows which tools were called, whether the JSON was valid, and the time and tokens used.
+After each answer, both versions show which tools were called, whether the JSON was valid, and the time and tokens used.
 
 ## Keeping answers correct
 
@@ -94,6 +104,7 @@ python src/check_data.py
 
 ```
 src/
+  app.py          web demo (Streamlit)
   cli.py          terminal chat
   agent.py        agent loop, retries, consent check, final-answer validation
   prompts.py      system prompt
@@ -109,7 +120,6 @@ tests/            pytest tests
 
 ## What I'd add next
 
-- A web interface instead of the terminal
 - Real company sign-in instead of a test ID
 - Search by meaning (embeddings), so "ML" matches "machine learning"
 - A database instead of JSON files
