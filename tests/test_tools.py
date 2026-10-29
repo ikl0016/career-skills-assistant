@@ -5,6 +5,7 @@ from tools import ToolBox
 @pytest.fixture
 def tb(tmp_path, monkeypatch):
     shutil.copytree("data", tmp_path, dirs_exist_ok=True)   # clean data per test
+    (tmp_path / "enrollments.json").write_text("[]")         # ignore demo enrollments
     monkeypatch.setenv("DATA_DIR", str(tmp_path))
     return ToolBox("E001")
 
